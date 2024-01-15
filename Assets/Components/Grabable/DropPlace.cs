@@ -32,9 +32,10 @@ public class DropPlace : MonoBehaviour
 
         if(_checkMode.HasFlag(CheckMode.CheckObject))
         {
-            if(_validGrabables.Count != 0 && !_validGrabables.Contains(grabable))
+            if(_validGrabables.Contains(grabable))
             {
-                isValid = false;
+
+                return true;
             }
 
         }
