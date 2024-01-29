@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using static Grabable;
@@ -12,14 +13,14 @@ public class DropPlace : MonoBehaviour
     public enum CheckMode
     {
         CheckObject = 1,
-        CheckGrabableType = 2
+        CheckObjectType = 2
     }
 
 
     [Header("Setup")]
     [SerializeField] private CheckMode _checkMode;
     [SerializeField] private List<Grabable> _validGrabables = new();
-    [SerializeField] private GrabableType _validGrabableType = new();
+    [SerializeField] private List<ObjectType> _validObjectsTypes = new();
 
     [Header("Events")]
     public UnityEvent<GameObject> OnObjectDropped;
@@ -28,7 +29,6 @@ public class DropPlace : MonoBehaviour
 
     public bool IsValid(Grabable grabable)
     {
-        bool isValid = true;
 
         if(_checkMode.HasFlag(CheckMode.CheckObject))
         {
@@ -39,16 +39,23 @@ public class DropPlace : MonoBehaviour
             }
 
         }
-        if(_checkMode.HasFlag(CheckMode.CheckGrabableType)) 
+        if(_checkMode.HasFlag(CheckMode.CheckObjectType)) 
         { 
-            if(_validGrabableType.HasFlag(grabable.grabableType))
-            {
-                isValid = false;
+            foreach(ObjectType objectType in grabable.objectTypes)
+            { 
+                if(_validObjectsTypes.Contains(objectType)) 
+                {
+
+                    return false;
+                
+                }  
+                   
+            
             }
         
-        }
+        }    
 
-        return isValid;
+        return false;
     }
 
     public void OnDrop(Grabable grabable)
