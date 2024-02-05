@@ -24,5 +24,7 @@ public class TextUITable : UITable<TextUICell>, IDropHandler
             cell._targetParent = _scrollRect.content;
         
         }
+        
+
     }
 }
