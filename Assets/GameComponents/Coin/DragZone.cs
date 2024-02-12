@@ -13,15 +13,16 @@ public class DragZone : MonoBehaviour, IDropHandler
     {
         _thisImage = GetComponent<Image>();
     }
+
     public void OnDrop(PointerEventData eventData)
     {
-         DraggNewSystem GetTag = eventData.pointerDrag.GetComponent<DraggNewSystem>();
+        DraggNewSystem GetTag = eventData.pointerDrag.GetComponent<DraggNewSystem>();
 
-        if (GetTag._type == _validType) 
-        {
-
-            GetTag.oldPosition = _thisImage.rectTransform.localPosition;   
         
+        if (_validType.Contains(GetTag._type))
+        {
+            GetTag.oldPosition = _thisImage.rectTransform.localPosition;
         }
     }
 }
+
