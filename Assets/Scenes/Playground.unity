@@ -694,7 +694,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365392744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.85, y: 1.08, z: 9.44}
+  m_LocalPosition: {x: -8.85, y: 10.57, z: 9.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -720,7 +720,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 365392748}
         m_TargetAssemblyTypeName: ApiTestHelper, Assembly-CSharp
-        m_MethodName: MakePokemonApiCall
+        m_MethodName: MakeApiCall
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -752,8 +752,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.581242, y: 3.3059437, z: 4.074792}
-  m_Center: {x: 3.0184844, y: -1.1529716, z: -7.6070514}
+  m_Size: {x: 3.581242, y: 17.498758, z: 4.074792}
+  m_Center: {x: 3.0184844, y: -8.249379, z: -7.6070514}
 --- !u!114 &365392748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,7 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231b02c2ec6ad9a4cb6a6b9b325b9838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: https://pokeapi.co/api/v2/pokemon/ditto
+  url: https://mhw-db.com/armor/1
   resultField: {fileID: 514481358}
   imageField: {fileID: 151195240}
 --- !u!1 &504427596
